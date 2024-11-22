@@ -1,16 +1,15 @@
-import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Meals from "./components/Meals";
-
+import { CartContextProvider } from "./store/CartContext";
 function App() {
-  const [meals, setMeals] = useState([]);
- 
   // console.log(meals[0]);
 
   return (
     <>
-      <Header />
-      <Meals meals={meals} />
+      <CartContextProvider>
+        <Header />
+        <Meals />
+      </CartContextProvider>
     </>
   );
 }
